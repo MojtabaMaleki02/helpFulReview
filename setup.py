@@ -5,9 +5,9 @@ import os
 here = os.path.abspath(os.path.dirname(__file__))
 
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
-    long_description = "\n" + fh.read()
+    long_description = fh.read()
 
-VERSION = '0.0.1'
+VERSION = '6'
 DESCRIPTION = 'Predicting helpfulness of reviews'
 LONG_DESCRIPTION = 'A package that predicts the helpfulness of reviews using machine learning.'
 
@@ -16,12 +16,14 @@ setup(
     name="helpful_review_predictor",
     version=VERSION,
     author="Mojtaba Maleki",
-    author_email="<mojtaba.maleki.138022@gmail.com>",
+    author_email="mojtaba.maleki.138022@gmail.com",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=['scikit-learn', 'numpy', 'scipy', 'joblib', 'textblob', 're'],
+    package_data={'helpfulReviewPredictor': ['*.pkl']},
+    include_package_data=True,
+    install_requires=['scikit-learn', 'numpy', 'scipy', 'joblib', 'textblob'],
     keywords=['python', 'webdevelopment', 'amazon', 'ecommerce', 'online shop', 'review', 'comment','machine learning', 'review analysis', 'helpful review predictor'],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
