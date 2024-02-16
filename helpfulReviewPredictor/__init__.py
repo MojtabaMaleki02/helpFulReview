@@ -1,1 +1,1 @@
-from helpfulReviewPredictor import predict_helpfulness
+from helpfulReviewPredictor.predictor import PredictHelpfulness
